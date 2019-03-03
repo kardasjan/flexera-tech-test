@@ -1,0 +1,9 @@
+# API
+api/apidoc*
+api/dep.*
+api/vendor
+
+# WWW
+www/node_modules
+www/dist
+www/debug.log
