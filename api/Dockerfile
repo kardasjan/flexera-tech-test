@@ -12,7 +12,11 @@ RUN dep ensure --vendor-only
 COPY . ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix nocgo -o /app .
 
-FROM scratch
-COPY --from=builder /app ./
+FROM alpine:latest
 
-ENTRYPOINT ["./app"]
+RUN apk add --no-cache bash
+
+COPY --from=builder /app ./
+COPY --from=builder /go/src/flexera-test/wait-for-it.sh ./.
+
+#ENTRYPOINT ["./app"]

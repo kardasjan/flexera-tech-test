@@ -7,7 +7,7 @@ git clone https://github.com/kardasjan/flexera-tech-test.git .
 docker-compose up
 ```
 
-Access frontend
+### Access frontend
 
 ```
 http://localhost:3000
